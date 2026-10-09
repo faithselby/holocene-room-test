@@ -93,10 +93,11 @@ const SAMPLE = async () => {
   return {
     rows, video, tiles,
     local: vt ? { state: vt.readyState, enabled: vt.enabled, label: vt.label } : null,
-    notes: ps.filter((t) => ["not here yet", "joining", "camera off", "connecting video", "no camera"].includes(t)),
+    notes: ps.filter((t) => ["joining", "camera off", "connecting video", "no camera"].includes(t)),
+    offline: ps.filter((t) => t === "not here yet").length,
     here: ps.find((t) => / of \d+ here$/.test(t)) ?? null,
     film: film ? { paused: film.paused, t: film.currentTime, rs: film.readyState, err: film.error?.code ?? null } : null,
-    chatTokens: [...new Set(document.body.innerText.match(/room-test-chat-r\d+-\d+/g) ?? [])],
+    chatTokens: [...new Set(document.body.textContent.match(/room-test-chat-r\d+-\d+/g) ?? [])],
   }
 }
 
