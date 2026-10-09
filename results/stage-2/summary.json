@@ -1,0 +1,75 @@
+{
+  "plan": {
+    "R": 1,
+    "S": 2,
+    "start": 1791545324686,
+    "seats": [
+      {
+        "g": 1,
+        "room": 1,
+        "member": 1
+      },
+      {
+        "g": 2,
+        "room": 1,
+        "member": 2
+      }
+    ],
+    "hold": 120,
+    "converge": 120,
+    "scenario": "none"
+  },
+  "table": [
+    {
+      "room": 1,
+      "acct": "roomtest1",
+      "joinS": null,
+      "healthyS": null,
+      "okPct": null,
+      "in": null,
+      "rend": null,
+      "kbOut": null,
+      "kbIn": null,
+      "lossPct": null,
+      "jitMs": null,
+      "rttMs": null,
+      "cpu": null,
+      "memMB": null,
+      "restarts": null,
+      "routes": "",
+      "film": "none",
+      "chat": null,
+      "rejoinS": null,
+      "errs": 0,
+      "failedReq": 0,
+      "fatal": "no password provided"
+    },
+    {
+      "room": 1,
+      "acct": "roomtest2",
+      "joinS": null,
+      "healthyS": null,
+      "okPct": null,
+      "in": null,
+      "rend": null,
+      "kbOut": null,
+      "kbIn": null,
+      "lossPct": null,
+      "jitMs": null,
+      "rttMs": null,
+      "cpu": null,
+      "memMB": null,
+      "restarts": null,
+      "routes": "",
+      "film": "none",
+      "chat": null,
+      "rejoinS": null,
+      "errs": 0,
+      "failedReq": 0,
+      "fatal": "no password provided"
+    }
+  ],
+  "lines": [
+    "Room 1: converged NEVER | healthy people per 10s:  "
+  ]
+}

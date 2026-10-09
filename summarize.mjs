@@ -2,7 +2,9 @@ import fs from "node:fs"
 const dir = process.argv[2]
 if (!dir) { console.error("usage: node summarize.mjs <results-dir>"); process.exit(1) }
 const read = (p) => { try { return fs.readFileSync(p, "utf8") } catch { return null } }
-const plan = JSON.parse(read(`${dir}/plan/plan.json`))
+const planText = read(`${dir}/plan/plan.json`)
+if (!planText) { console.error(`No plan found in ${dir}. Did you run: gh run download <run-id> -D ${dir}`); process.exit(1) }
+const plan = JSON.parse(planText)
 const fin = (a) => a.filter((x) => Number.isFinite(x))
 const med = (a) => { const s = fin(a).sort((x, y) => x - y); return s.length ? +s[Math.floor(s.length / 2)].toFixed(1) : null }
 const mx = (a) => { const s = fin(a); return s.length ? +Math.max(...s).toFixed(1) : null }

@@ -195,11 +195,13 @@ try {
   fs.writeFileSync(`${OUT}/final.json`, JSON.stringify({ g: G, room: ROOM, timing, seated, errors, failed, eventLog }))
   await page.close({ runBeforeUnload: true }).catch(() => {})
   status({ phase: "done" })
+  if (!timing.firstHealthy) process.exitCode = 2 // ran, but never reached full media health
 } catch (e) {
   const alerts = await page.locator('[role="alert"]').allInnerTexts().catch(() => [])
   fs.writeFileSync(`${OUT}/final.json`, JSON.stringify({ g: G, room: ROOM, timing, seated, errors, failed,
     fatal: redact(e.message), url: redact(page.url()), alerts: alerts.map(redact) }))
   status({ phase: "error", error: redact(e.message) })
+  process.exitCode = 1
 } finally {
   await browser.close().catch(() => {})
 }
