@@ -1,0 +1,75 @@
+{
+  "plan": {
+    "R": 1,
+    "S": 2,
+    "start": 1791548131901,
+    "seats": [
+      {
+        "g": 1,
+        "room": 1,
+        "member": 1
+      },
+      {
+        "g": 2,
+        "room": 1,
+        "member": 2
+      }
+    ],
+    "hold": 120,
+    "converge": 120,
+    "scenario": "none"
+  },
+  "table": [
+    {
+      "room": 1,
+      "acct": "roomtest1",
+      "joinS": 11.2,
+      "healthyS": 31.3,
+      "okPct": 100,
+      "in": 1,
+      "rend": 1,
+      "kbOut": 360,
+      "kbIn": 356,
+      "lossPct": 0,
+      "jitMs": 3,
+      "rttMs": 22,
+      "cpu": 1.7,
+      "memMB": 2040,
+      "restarts": 0,
+      "routes": "srflx/udp>srflx",
+      "film": "playing@83s",
+      "chat": "MISSING",
+      "rejoinS": null,
+      "errs": 88,
+      "failedReq": 55,
+      "fatal": ""
+    },
+    {
+      "room": 1,
+      "acct": "roomtest2",
+      "joinS": 11.5,
+      "healthyS": 31.5,
+      "okPct": 100,
+      "in": 1,
+      "rend": 1,
+      "kbOut": 356,
+      "kbIn": 360,
+      "lossPct": 0,
+      "jitMs": 3,
+      "rttMs": 22,
+      "cpu": 1.6,
+      "memMB": 2142,
+      "restarts": 0,
+      "routes": "srflx/udp>srflx",
+      "film": "playing@83s",
+      "chat": "MISSING",
+      "rejoinS": null,
+      "errs": 88,
+      "failedReq": 54,
+      "fatal": ""
+    }
+  ],
+  "lines": [
+    "Room 1: converged 31.5s after start | healthy people per 10s:  00222222222222222222222"
+  ]
+}

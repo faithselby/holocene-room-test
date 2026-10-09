@@ -27,6 +27,7 @@ for (let r = 1; r <= plan.R; r++) {
     const recv = (last?.video ?? []).reduce((a, v) => a + (v.recv ?? 0), 0)
     table.push({
       room: r, acct: `roomtest${d.s.g}`,
+      cores: d.final.machine?.cores ?? null,
       joinS: secs(t.t0, t.roomOpen), healthyS: secs(t.t0, t.firstHealthy),
       okPct: after.length ? Math.round((100 * after.filter((x) => x.a.healthy).length) / after.length) : null,
       in: last?.a?.inFlowing ?? null, rend: last?.a?.rendering ?? null,

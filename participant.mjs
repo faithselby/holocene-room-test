@@ -1,6 +1,7 @@
 // One Holocene participant (one browser) inside a Daytona sandbox. Test-only; no app changes.
 import { chromium } from "playwright"
 import fs from "node:fs"
+import os from "node:os"
 
 const E = process.env
 const G = Number(E.ROOM_TEST_G), ROOM = Number(E.ROOM_TEST_ROOM ?? 1), EXPECTED = Number(E.ROOM_TEST_EXPECTED)
@@ -130,6 +131,7 @@ function assess(prev, cur, dt) {
 }
 
 const errors = [], failed = [], timing = { t0: Date.now() }
+const machine = { cores: os.availableParallelism?.() ?? os.cpus().length, memMB: Math.round(os.totalmem() / 1048576) }
 const cap = (arr, s) => { if (arr.length < 200) arr.push(redact(s)) }
 const wire = (p) => {
   p.on("console", (m) => m.type() === "error" && cap(errors, m.text()))
@@ -165,7 +167,7 @@ let page = await ctx.newPage(); wire(page)
 try {
   if (!PASSWORD) throw new Error("no password provided")
   status({ phase: "login" }); await login(page); timing.loggedIn = Date.now()
-  status({ phase: "entering" }); await enter(page); timing.roomOpen = Date.now()
+  status({ phase: "entering" }); await enter(page); timing.roomOpen = Date.now(); await openChat(page)
   let prev = null, prevCpu = cpuSnap(), prevAt = Date.now(), left = false, chatted = false
   while (Date.now() < END_AT) {
     if (LEAVE_AT && !left && Date.now() >= LEAVE_AT) {
@@ -173,7 +175,7 @@ try {
       if (LEAVE_MODE === "crash") await (await ctx.newCDPSession(page)).send("Page.crash").catch(() => {})
       else await page.close({ runBeforeUnload: true }).catch(() => {})
       await page.close().catch(() => {}); await sleep(REJOIN_MS)
-      page = await ctx.newPage(); wire(page); await enter(page); timing.rejoinedAt = Date.now(); prev = null
+      page = await ctx.newPage(); wire(page); await enter(page); timing.rejoinedAt = Date.now(); await openChat(page); prev = null
       continue
     }
     if (CHATTER && CHAT_AT && !chatted && Date.now() >= CHAT_AT) {
@@ -193,16 +195,19 @@ try {
     await sleep(SAMPLE_MS)
   }
   const eventLog = await page.evaluate(() => window.holoceneRoom?.eventLog() ?? []).catch(() => [])
-  fs.writeFileSync(`${OUT}/final.json`, JSON.stringify({ g: G, room: ROOM, timing, seated, errors, failed, eventLog }))
+  fs.writeFileSync(`${OUT}/final.json`, JSON.stringify({ g: G, room: ROOM, machine, timing, seated, errors, failed, eventLog }))
   await page.close({ runBeforeUnload: true }).catch(() => {})
   status({ phase: "done" })
   if (!timing.firstHealthy) process.exitCode = 2 // ran, but never reached full media health
 } catch (e) {
   const alerts = await page.locator('[role="alert"]').allInnerTexts().catch(() => [])
-  fs.writeFileSync(`${OUT}/final.json`, JSON.stringify({ g: G, room: ROOM, timing, seated, errors, failed,
+  fs.writeFileSync(`${OUT}/final.json`, JSON.stringify({ g: G, room: ROOM, machine, timing, seated, errors, failed,
     fatal: redact(e.message), url: redact(page.url()), alerts: alerts.map(redact) }))
   status({ phase: "error", error: redact(e.message) })
   process.exitCode = 1
 } finally {
   await browser.close().catch(() => {})
 }
+async function openChat(page) {
+     await page.getByRole("button", { name: /discussion/i }).click({ timeout: 10_000 }).catch(() => {})
+   }
