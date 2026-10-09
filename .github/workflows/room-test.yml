@@ -1,0 +1,84 @@
+name: room-test
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:      { description: "App URL", required: true, default: "https://www.holocene.club" }
+      screening_id:  { description: "ROOM_TEST_SCREENING_ID", required: true }
+      rooms:         { description: "Concurrent rooms", required: true, default: "1" }
+      size:          { description: "People per room", required: true, default: "2" }
+      hold_s:        { description: "Hold after convergence window (s)", required: true, default: "120" }
+      converge_s:    { description: "Convergence window (s)", required: true, default: "120" }
+      scenario:      { description: "none or soak (leave+rejoin, crash+rejoin)", required: true, default: "none" }
+      start_delay_s: { description: "Delay so all runners start together (s)", required: true, default: "240" }
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      seats: ${{ steps.p.outputs.seats }}
+      start: ${{ steps.p.outputs.start }}
+    steps:
+      - id: p
+        env: { R: "${{ inputs.rooms }}", S: "${{ inputs.size }}", D: "${{ inputs.start_delay_s }}", H: "${{ inputs.hold_s }}", C: "${{ inputs.converge_s }}", SC: "${{ inputs.scenario }}" }
+        run: |
+          node -e '
+            const fs = require("fs"), E = process.env
+            const R = +E.R, S = +E.S, start = Date.now() + (+E.D) * 1000
+            const seats = Array.from({ length: R * S }, (_, k) => ({ g: k + 1, room: Math.floor(k / S) + 1, member: (k % S) + 1 }))
+            fs.appendFileSync(E.GITHUB_OUTPUT, `seats=${JSON.stringify(seats)}\nstart=${start}\n`)
+            fs.writeFileSync("plan.json", JSON.stringify({ R, S, start, seats, hold: +E.H, converge: +E.C, scenario: E.SC }))
+          '
+      - uses: actions/upload-artifact@v4
+        with: { name: plan, path: plan.json }
+
+  participant:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        seat: ${{ fromJSON(needs.plan.outputs.seats) }}
+    name: "room ${{ matrix.seat.room }} / person ${{ matrix.seat.member }} (roomtest${{ matrix.seat.g }})"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm i playwright@1.49.1 --no-audit --no-fund
+      - run: google-chrome --version || npx playwright install --with-deps chrome
+      - name: Machine
+        run: nproc; free -m
+      - name: Wait for common start
+        run: |
+          now=$(date +%s%3N); wait=$(( (${{ needs.plan.outputs.start }} - now) / 1000 ))
+          if [ $wait -gt 0 ]; then echo "waiting ${wait}s"; sleep $wait; else echo "WARNING: started late by $(( -wait ))s"; fi
+      - name: Participant
+        env:
+          ROOM_TEST_BASE_URL: ${{ inputs.base_url }}
+          ROOM_TEST_SCREENING_ID: ${{ inputs.screening_id }}
+          ROOM_TEST_PASSWORD: ${{ secrets.ROOM_TEST_PASSWORD }}
+          ROOM_TEST_G: ${{ matrix.seat.g }}
+          ROOM_TEST_ROOM: ${{ matrix.seat.room }}
+          ROOM_TEST_EXPECTED: ${{ inputs.size }}
+          ROOM_TEST_CHATTER: ${{ matrix.seat.member == 1 && '1' || '0' }}
+          ROOM_TEST_PRINT: "1"
+          START: ${{ needs.plan.outputs.start }}
+          CONVERGE: ${{ inputs.converge_s }}
+          HOLD: ${{ inputs.hold_s }}
+          SCENARIO: ${{ inputs.scenario }}
+          MEMBER: ${{ matrix.seat.member }}
+          SIZE: ${{ inputs.size }}
+        run: |
+          export ROOM_TEST_END_AT=$(( START + (CONVERGE + HOLD) * 1000 ))
+          export ROOM_TEST_CHAT_AT=$(( START + CONVERGE * 1000 ))
+          export ROOM_TEST_CHAT_TOKEN="room-test-chat-r${ROOM_TEST_ROOM}-${START}"
+          if [ "$SCENARIO" = "soak" ]; then
+            if [ "$MEMBER" = "$SIZE" ]; then export ROOM_TEST_LEAVE_AT=$(( START + (CONVERGE + HOLD / 2) * 1000 )) ROOM_TEST_LEAVE_MODE=close; fi
+            if [ "$MEMBER" = "5" ] && [ "$SIZE" -ge 6 ]; then export ROOM_TEST_LEAVE_AT=$(( START + (CONVERGE + HOLD * 3 / 4) * 1000 )) ROOM_TEST_LEAVE_MODE=crash; fi
+          fi
+          node participant.mjs
+          echo "final status: $(cat /tmp/run/out/p${ROOM_TEST_G}/status.json)"
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: "p${{ matrix.seat.g }}", path: "/tmp/run/out/p${{ matrix.seat.g }}", if-no-files-found: warn }
