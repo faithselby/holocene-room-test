@@ -18,7 +18,7 @@ const data = plan.seats.map((s) => ({
 const table = [], lines = []
 for (let r = 1; r <= plan.R; r++) {
   const room = data.filter((d) => d.s.room === r)
-  const firsts = room.map((d) => d.final.timing?.firstHealthy)
+  const firsts = room.map((d) => d.final.timing?.firstHealthy ?? d.samples.find((x) => x.a?.healthy)?.at)
   const converged = firsts.every(Boolean) ? Math.max(...firsts) : null
   for (const d of room) {
     const t = d.final.timing ?? {}, sm = d.samples, last = sm.at(-1)
@@ -28,7 +28,7 @@ for (let r = 1; r <= plan.R; r++) {
     table.push({
       room: r, acct: `roomtest${d.s.g}`,
       cores: d.final.machine?.cores ?? null,
-      joinS: secs(t.t0, t.roomOpen), healthyS: secs(t.t0, t.firstHealthy),
+      startedS: secs(plan.start, t.t0), joinS: secs(t.t0, t.roomOpen), healthyS: secs(plan.start, t.firstHealthy),
       okPct: after.length ? Math.round((100 * after.filter((x) => x.a.healthy).length) / after.length) : null,
       in: last?.a?.inFlowing ?? null, rend: last?.a?.rendering ?? null,
       kbOut: med(sm.map((x) => x.a.kbpsOut)), kbIn: med(sm.map((x) => x.a.kbpsIn)),
@@ -37,13 +37,21 @@ for (let r = 1; r <= plan.R; r++) {
       rttMs: med(sm.flatMap((x) => (x.video ?? []).map((v) => (v.rtt ?? NaN) * 1000))),
       cpu: mx(sm.map((x) => x.cpu?.cores ?? x.cpu?.hostPct)), memMB: mx(sm.map((x) => x.memMB)),
       restarts: mx(sm.flatMap((x) => (x.rows ?? []).map((w) => w.restarts ?? 0))),
+      peers: mx(sm.map((x) => (x.rows ?? []).length)),
       routes: [...new Set((last?.video ?? []).map((v) => v.route))].join(" "),
-      film: last?.film ? (last.film.err ? `ERR${last.film.err}` : last.film.paused ? "paused" : `playing@${Math.round(last.film.t)}s`) : "none",
+      film: (() => { const fl = sm.filter((x) => x.film).slice(-3); const f = last?.film
+        if (!f) return "none"; if (f.err) return `ERR${f.err}`; if (f.paused) return "paused"
+        if (fl.length >= 3 && fl.at(-1).film.t - fl[0].film.t < 1) return `FROZEN@${Math.round(f.t)}s rs${f.rs}`
+        return `playing@${Math.round(f.t)}s` })(),
+      _off: last?.film && !last.film.paused ? last.film.t - last.at / 1000 : null,
       chat: last?.a ? (last.a.chatOwn ? "ok" : "MISSING") + (last.a.chatForeign ? ` FOREIGN:${last.a.chatForeign}` : "") : null,
       rejoinS: secs(t.rejoinedAt, t.healthyAfterRejoin),
       errs: d.final.errors?.length ?? 0, failedReq: d.final.failed?.length ?? 0, fatal: d.final.fatal ?? "",
     })
   }
+  const offs = table.filter((x) => x.room === r && x._off != null).map((x) => x._off).sort((a, b) => a - b)
+    const mid = offs[Math.floor(offs.length / 2)]
+    for (const x of table.filter((x) => x.room === r)) { x.syncS = x._off == null ? null : +(x._off - mid).toFixed(1); delete x._off }
   const seen = new Map(), ok = new Map()
   for (const d of room) for (const x of d.samples) {
     const b = Math.floor((x.at - plan.start) / 10_000)

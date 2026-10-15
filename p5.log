@@ -1,0 +1,298 @@
+﻿2026-10-15T11:06:31.0334473Z Current runner version: '2.337.0'
+2026-10-15T11:06:31.0403406Z ##[group]Runner Image Provisioner
+2026-10-15T11:06:31.0404617Z Hosted Compute Agent
+2026-10-15T11:06:31.0405373Z Version: 20261002.596
+2026-10-15T11:06:31.0406091Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-15T11:06:31.0406947Z Build Date: 2026-10-02T22:28:27Z
+2026-10-15T11:06:31.0407824Z Worker ID: {b8763b6a-e3a2-4448-bd54-72fa57c004ad}
+2026-10-15T11:06:31.0408622Z Region: centralus
+2026-10-15T11:06:31.0409314Z Cloud: Azure
+2026-10-15T11:06:31.0409921Z ##[endgroup]
+2026-10-15T11:06:31.0411793Z ##[group]Operating System
+2026-10-15T11:06:31.0412790Z Ubuntu
+2026-10-15T11:06:31.0413427Z 24.04.5
+2026-10-15T11:06:31.0414118Z LTS
+2026-10-15T11:06:31.0414695Z ##[endgroup]
+2026-10-15T11:06:31.0415355Z ##[group]Runner Image
+2026-10-15T11:06:31.0416096Z Image: ubuntu-24.04
+2026-10-15T11:06:31.0416755Z Version: 20261004.327.1
+2026-10-15T11:06:31.0418725Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-15T11:06:31.0420618Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-15T11:06:31.0421768Z ##[endgroup]
+2026-10-15T11:06:31.0443958Z ##[group]GITHUB_TOKEN Permissions
+2026-10-15T11:06:31.0446674Z Contents: read
+2026-10-15T11:06:31.0447360Z Metadata: read
+2026-10-15T11:06:31.0448123Z Packages: read
+2026-10-15T11:06:31.0448765Z ##[endgroup]
+2026-10-15T11:06:31.0451681Z Secret source: Actions
+2026-10-15T11:06:31.0453048Z Cache mode: write
+2026-10-15T11:06:31.0454106Z Prepare workflow directory
+2026-10-15T11:06:31.0859500Z Prepare all required actions
+2026-10-15T11:06:31.0918577Z Getting action download info
+2026-10-15T11:06:31.3867414Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-15T11:06:31.5053115Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-15T11:06:31.6961843Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-15T11:06:32.0143947Z Complete job name: room 1 / person 5 (roomtest5)
+2026-10-15T11:06:32.0866434Z ##[group]Run actions/checkout@v4
+2026-10-15T11:06:32.0867563Z with:
+2026-10-15T11:06:32.0868367Z   repository: faithselby/holocene-room-test
+2026-10-15T11:06:32.0876187Z   token: ***
+2026-10-15T11:06:32.0876950Z   ssh-strict: true
+2026-10-15T11:06:32.0877737Z   ssh-user: git
+2026-10-15T11:06:32.0878504Z   persist-credentials: true
+2026-10-15T11:06:32.0879331Z   clean: true
+2026-10-15T11:06:32.0880122Z   sparse-checkout-cone-mode: true
+2026-10-15T11:06:32.0881034Z   fetch-depth: 1
+2026-10-15T11:06:32.0881794Z   fetch-tags: false
+2026-10-15T11:06:32.0883034Z   show-progress: true
+2026-10-15T11:06:32.0883861Z   lfs: false
+2026-10-15T11:06:32.0884625Z   submodules: false
+2026-10-15T11:06:32.0885485Z   set-safe-directory: true
+2026-10-15T11:06:32.0886415Z   allow-unsafe-pr-checkout: false
+2026-10-15T11:06:32.0887566Z ##[endgroup]
+2026-10-15T11:06:32.1858879Z Syncing repository: faithselby/holocene-room-test
+2026-10-15T11:06:32.1863213Z ##[group]Getting Git version info
+2026-10-15T11:06:32.1865962Z Working directory is '/home/runner/work/holocene-room-test/holocene-room-test'
+2026-10-15T11:06:32.1869641Z [command]/usr/bin/git version
+2026-10-15T11:06:32.2014179Z git version 2.55.0
+2026-10-15T11:06:32.2060075Z ##[endgroup]
+2026-10-15T11:06:32.2068590Z Temporarily overriding HOME='/home/runner/work/_temp/9d8748d3-12a7-4939-9b94-25f88012152c' before making global git config changes
+2026-10-15T11:06:32.2072000Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-15T11:06:32.2075859Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/holocene-room-test/holocene-room-test
+2026-10-15T11:06:32.2107604Z Deleting the contents of '/home/runner/work/holocene-room-test/holocene-room-test'
+2026-10-15T11:06:32.2121905Z ##[group]Initializing the repository
+2026-10-15T11:06:32.2134947Z [command]/usr/bin/git init /home/runner/work/holocene-room-test/holocene-room-test
+2026-10-15T11:06:32.2277529Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-15T11:06:32.2302690Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-15T11:06:32.2305437Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-15T11:06:32.2307372Z hint: call:
+2026-10-15T11:06:32.2308686Z hint:
+2026-10-15T11:06:32.2309991Z hint: 	git config --global init.defaultBranch <name>
+2026-10-15T11:06:32.2311564Z hint:
+2026-10-15T11:06:32.2313302Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-15T11:06:32.2315784Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-15T11:06:32.2317731Z hint:
+2026-10-15T11:06:32.2318811Z hint: 	git branch -m <name>
+2026-10-15T11:06:32.2320036Z hint:
+2026-10-15T11:06:32.2321691Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-15T11:06:32.2324735Z Initialized empty Git repository in /home/runner/work/holocene-room-test/holocene-room-test/.git/
+2026-10-15T11:06:32.2332232Z [command]/usr/bin/git remote add origin https://github.com/faithselby/holocene-room-test
+2026-10-15T11:06:32.2378147Z ##[endgroup]
+2026-10-15T11:06:32.2380254Z ##[group]Disabling automatic garbage collection
+2026-10-15T11:06:32.2385407Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-15T11:06:32.2437265Z ##[endgroup]
+2026-10-15T11:06:32.2439208Z ##[group]Setting up auth
+2026-10-15T11:06:32.2441161Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-15T11:06:32.2495699Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-15T11:06:32.2970722Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-15T11:06:32.2976814Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-15T11:06:32.3125242Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-15T11:06:32.3150319Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-15T11:06:32.3313703Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-15T11:06:32.3346791Z ##[endgroup]
+2026-10-15T11:06:32.3349349Z ##[group]Fetching the repository
+2026-10-15T11:06:32.3356558Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f412d416a75def6b38bb43134154bd1de1310399:refs/remotes/origin/main
+2026-10-15T11:06:32.7432604Z From https://github.com/faithselby/holocene-room-test
+2026-10-15T11:06:32.7434029Z  * [new ref]         f412d416a75def6b38bb43134154bd1de1310399 -> origin/main
+2026-10-15T11:06:32.7436792Z ##[endgroup]
+2026-10-15T11:06:32.7438569Z ##[group]Determining the checkout info
+2026-10-15T11:06:32.7440054Z ##[endgroup]
+2026-10-15T11:06:32.7440898Z [command]/usr/bin/git sparse-checkout disable
+2026-10-15T11:06:32.7457427Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-15T11:06:32.7485428Z ##[group]Checking out the ref
+2026-10-15T11:06:32.7488023Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-10-15T11:06:32.7558049Z Switched to a new branch 'main'
+2026-10-15T11:06:32.7562586Z branch 'main' set up to track 'origin/main'.
+2026-10-15T11:06:32.7568232Z ##[endgroup]
+2026-10-15T11:06:32.7614790Z [command]/usr/bin/git log -1 --format=%H
+2026-10-15T11:06:32.7634440Z f412d416a75def6b38bb43134154bd1de1310399
+2026-10-15T11:06:32.7878327Z ##[group]Run actions/setup-node@v4
+2026-10-15T11:06:32.7878818Z with:
+2026-10-15T11:06:32.7879515Z   node-version: 22
+2026-10-15T11:06:32.7879955Z   always-auth: false
+2026-10-15T11:06:32.7880401Z   check-latest: false
+2026-10-15T11:06:32.7883154Z   token: ***
+2026-10-15T11:06:32.7883612Z ##[endgroup]
+2026-10-15T11:06:32.9118563Z (node:1991) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-15T11:06:32.9119801Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-15T11:06:32.9121756Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-15T11:06:32.9123388Z ##[group]Environment details
+2026-10-15T11:06:33.4620122Z node: v22.23.3
+2026-10-15T11:06:33.4624180Z npm: 10.9.9
+2026-10-15T11:06:33.4624931Z yarn: 1.22.22
+2026-10-15T11:06:33.4626002Z ##[endgroup]
+2026-10-15T11:06:33.4744348Z ##[group]Run npm i playwright@1.49.1 --no-audit --no-fund
+2026-10-15T11:06:33.4744845Z [36;1mnpm i playwright@1.49.1 --no-audit --no-fund[0m
+2026-10-15T11:06:33.4910339Z shell: /usr/bin/bash -e {0}
+2026-10-15T11:06:33.4910725Z ##[endgroup]
+2026-10-15T11:06:40.1793859Z 
+2026-10-15T11:06:40.1801619Z added 193 packages in 7s
+2026-10-15T11:06:40.3399723Z ##[group]Run google-chrome --version || npx playwright install --with-deps chrome
+2026-10-15T11:06:40.3400597Z [36;1mgoogle-chrome --version || npx playwright install --with-deps chrome[0m
+2026-10-15T11:06:40.3469510Z shell: /usr/bin/bash -e {0}
+2026-10-15T11:06:40.3470016Z ##[endgroup]
+2026-10-15T11:06:40.6974477Z Google Chrome 154.0.8037.97 
+2026-10-15T11:06:40.7117616Z ##[group]Run nproc; free -m
+2026-10-15T11:06:40.7118105Z [36;1mnproc; free -m[0m
+2026-10-15T11:06:40.7176990Z shell: /usr/bin/bash -e {0}
+2026-10-15T11:06:40.7177542Z ##[endgroup]
+2026-10-15T11:06:40.7272054Z 2
+2026-10-15T11:06:40.7290526Z                total        used        free      shared  buff/cache   available
+2026-10-15T11:06:40.7291464Z Mem:            7937        1208        4117          45        2961        6728
+2026-10-15T11:06:40.7293532Z Swap:           3071           0        3071
+2026-10-15T11:06:40.7350419Z ##[group]Run now=$(date +%s%3N); wait=$(( (1792062624057 - now) / 1000 ))
+2026-10-15T11:06:40.7351117Z [36;1mnow=$(date +%s%3N); wait=$(( (1792062624057 - now) / 1000 ))[0m
+2026-10-15T11:06:40.7351926Z [36;1mif [ $wait -gt 0 ]; then echo "waiting ${wait}s"; sleep $wait; else echo "WARNING: started late by $(( -wait ))s"; fi[0m
+2026-10-15T11:06:40.7397341Z shell: /usr/bin/bash -e {0}
+2026-10-15T11:06:40.7397823Z ##[endgroup]
+2026-10-15T11:06:40.7478491Z waiting 223s
+2026-10-15T11:10:23.7572136Z ##[group]Run export ROOM_TEST_END_AT=$(( START + (CONVERGE + HOLD) * 1000 ))
+2026-10-15T11:10:23.7572857Z [36;1mexport ROOM_TEST_END_AT=$(( START + (CONVERGE + HOLD) * 1000 ))[0m
+2026-10-15T11:10:23.7573315Z [36;1mexport ROOM_TEST_CHAT_AT=$(( START + CONVERGE * 1000 ))[0m
+2026-10-15T11:10:23.7573766Z [36;1mexport ROOM_TEST_CHAT_TOKEN="room-test-chat-r${ROOM_TEST_ROOM}-${START}"[0m
+2026-10-15T11:10:23.7574205Z [36;1mif [ "$SCENARIO" = "soak" ]; then[0m
+2026-10-15T11:10:23.7574724Z [36;1m  if [ "$MEMBER" = "$SIZE" ]; then export ROOM_TEST_LEAVE_AT=$(( START + (CONVERGE + HOLD / 2) * 1000 )) ROOM_TEST_LEAVE_MODE=close; fi[0m
+2026-10-15T11:10:23.7575452Z [36;1m  if [ "$MEMBER" = "5" ] && [ "$SIZE" -ge 6 ]; then export ROOM_TEST_LEAVE_AT=$(( START + (CONVERGE + HOLD * 3 / 4) * 1000 )) ROOM_TEST_LEAVE_MODE=crash; fi[0m
+2026-10-15T11:10:23.7575979Z [36;1mfi[0m
+2026-10-15T11:10:23.7576274Z [36;1mnode participant.mjs[0m
+2026-10-15T11:10:23.7576693Z [36;1mecho "final status: $(cat /tmp/run/out/p${ROOM_TEST_G}/status.json)"[0m
+2026-10-15T11:10:23.7612273Z shell: /usr/bin/bash -e {0}
+2026-10-15T11:10:23.7612929Z env:
+2026-10-15T11:10:23.7613240Z   ROOM_TEST_BASE_URL: https://www.holocene.club
+2026-10-15T11:10:23.7613627Z   ROOM_TEST_SCREENING_ID: 2496e585-89d4-446a-a891-cb64343ff92c
+2026-10-15T11:10:23.7614337Z   ROOM_TEST_PASSWORD: ***
+2026-10-15T11:10:23.7614616Z   ROOM_TEST_G: 5
+2026-10-15T11:10:23.7614881Z   ROOM_TEST_ROOM: 1
+2026-10-15T11:10:23.7615137Z   ROOM_TEST_EXPECTED: 9
+2026-10-15T11:10:23.7615540Z   ROOM_TEST_CHATTER: 0
+2026-10-15T11:10:23.7615833Z   ROOM_TEST_PRINT: 1
+2026-10-15T11:10:23.7616085Z   START: 1792062624057
+2026-10-15T11:10:23.7616387Z   CONVERGE: 120
+2026-10-15T11:10:23.7616633Z   HOLD: 900
+2026-10-15T11:10:23.7616872Z   SCENARIO: soak
+2026-10-15T11:10:23.7617225Z   MEMBER: 5
+2026-10-15T11:10:23.7617671Z   SIZE: 9
+2026-10-15T11:10:23.7617920Z ##[endgroup]
+2026-10-15T11:10:31.2196172Z 11:10:31 waiting verified=0 connected=0 out=0 in=0 rendering=0 placeholders=0 kbpsOut=0 kbpsIn=0
+2026-10-15T11:10:41.2447499Z 11:10:41 waiting verified=8 connected=8 out=0 in=0 rendering=0 placeholders=0 kbpsOut=0 kbpsIn=0
+2026-10-15T11:10:51.2556334Z 11:10:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1141 kbpsIn=1122
+2026-10-15T11:11:01.2775743Z 11:11:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1214 kbpsIn=1197
+2026-10-15T11:11:11.2936470Z 11:11:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1176 kbpsIn=1174
+2026-10-15T11:11:21.3077306Z 11:11:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1201 kbpsIn=1207
+2026-10-15T11:11:31.3237886Z 11:11:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1197 kbpsIn=1189
+2026-10-15T11:11:41.3366699Z 11:11:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1205 kbpsIn=1214
+2026-10-15T11:11:51.3488427Z 11:11:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1199 kbpsIn=1192
+2026-10-15T11:12:01.3704509Z 11:12:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1187 kbpsIn=1201
+2026-10-15T11:12:11.3826794Z 11:12:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1222 kbpsIn=1203
+2026-10-15T11:12:21.3929894Z 11:12:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1181 kbpsIn=1188
+2026-10-15T11:12:31.4274356Z 11:12:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1202 kbpsIn=1212
+2026-10-15T11:12:41.4528039Z 11:12:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1187 kbpsIn=1188
+2026-10-15T11:12:51.4697789Z 11:12:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1209 kbpsIn=1213
+2026-10-15T11:13:01.4959549Z 11:13:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1191 kbpsIn=1183
+2026-10-15T11:13:11.5186099Z 11:13:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1200 kbpsIn=1213
+2026-10-15T11:13:21.5380879Z 11:13:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1204 kbpsIn=1192
+2026-10-15T11:13:31.5502820Z 11:13:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1187 kbpsIn=1200
+2026-10-15T11:13:41.5640480Z 11:13:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1208 kbpsIn=1205
+2026-10-15T11:13:51.5796203Z 11:13:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1180 kbpsIn=1190
+2026-10-15T11:14:01.5921543Z 11:14:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1233 kbpsIn=1216
+2026-10-15T11:14:11.6072773Z 11:14:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1196 kbpsIn=1197
+2026-10-15T11:14:21.6247072Z 11:14:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1221 kbpsIn=1219
+2026-10-15T11:14:31.6399588Z 11:14:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1177 kbpsIn=1183
+2026-10-15T11:14:41.6510475Z 11:14:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1201 kbpsIn=1202
+2026-10-15T11:14:51.6689059Z 11:14:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1201 kbpsIn=1190
+2026-10-15T11:15:01.6803786Z 11:15:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1196 kbpsIn=1204
+2026-10-15T11:15:11.6909291Z 11:15:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1202 kbpsIn=1198
+2026-10-15T11:15:21.7063338Z 11:15:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1178 kbpsIn=1188
+2026-10-15T11:15:31.7226933Z 11:15:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1220 kbpsIn=1205
+2026-10-15T11:15:41.7370274Z 11:15:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1182 kbpsIn=1181
+2026-10-15T11:15:51.7476636Z 11:15:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1217 kbpsIn=1210
+2026-10-15T11:16:01.7661527Z 11:16:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1187 kbpsIn=1181
+2026-10-15T11:16:11.7779351Z 11:16:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1209 kbpsIn=1209
+2026-10-15T11:16:21.7909564Z 11:16:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1195 kbpsIn=1188
+2026-10-15T11:16:31.8051359Z 11:16:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1186 kbpsIn=1198
+2026-10-15T11:16:41.8189260Z 11:16:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1204 kbpsIn=1193
+2026-10-15T11:16:51.8333487Z 11:16:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1177 kbpsIn=1187
+2026-10-15T11:17:01.8450544Z 11:17:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1217 kbpsIn=1204
+2026-10-15T11:17:11.8581921Z 11:17:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1176 kbpsIn=1180
+2026-10-15T11:17:21.8760910Z 11:17:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1239 kbpsIn=1226
+2026-10-15T11:17:31.8890714Z 11:17:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1199 kbpsIn=1198
+2026-10-15T11:17:41.9024775Z 11:17:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1212 kbpsIn=1219
+2026-10-15T11:17:51.9180282Z 11:17:51 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1199 kbpsIn=1185
+2026-10-15T11:18:01.9349791Z 11:18:01 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1194 kbpsIn=1205
+2026-10-15T11:18:11.9465408Z 11:18:11 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1216 kbpsIn=1201
+2026-10-15T11:18:21.9647957Z 11:18:21 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1179 kbpsIn=1192
+2026-10-15T11:18:31.9772847Z 11:18:31 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1223 kbpsIn=1208
+2026-10-15T11:18:41.9905489Z 11:18:41 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1180 kbpsIn=1184
+2026-10-15T11:18:52.0021366Z 11:18:52 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1211 kbpsIn=1212
+2026-10-15T11:19:02.0194730Z 11:19:02 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1165 kbpsIn=1162
+2026-10-15T11:19:12.0355464Z 11:19:12 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1190 kbpsIn=1193
+2026-10-15T11:19:22.0488921Z 11:19:22 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1180 kbpsIn=1173
+2026-10-15T11:19:32.0688715Z 11:19:32 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1175 kbpsIn=1182
+2026-10-15T11:19:42.0812500Z 11:19:42 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1197 kbpsIn=1183
+2026-10-15T11:19:52.0970847Z 11:19:52 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1162 kbpsIn=1174
+2026-10-15T11:20:02.1075656Z 11:20:02 waiting verified=7 connected=7 out=7 in=7 rendering=7 placeholders=0 kbpsOut=1049 kbpsIn=1039
+2026-10-15T11:20:12.1321004Z 11:20:12 waiting verified=7 connected=7 out=7 in=7 rendering=7 placeholders=0 kbpsOut=1023 kbpsIn=1014
+2026-10-15T11:20:22.1414664Z 11:20:22 waiting verified=7 connected=7 out=7 in=7 rendering=7 placeholders=0 kbpsOut=1047 kbpsIn=1045
+2026-10-15T11:20:32.1972751Z 11:20:32 waiting verified=8 connected=8 out=7 in=7 rendering=7 placeholders=0 kbpsOut=1023 kbpsIn=1018
+2026-10-15T11:20:42.2256764Z 11:20:42 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1214 kbpsIn=1208
+2026-10-15T11:20:52.2442091Z 11:20:52 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1196 kbpsIn=1187
+2026-10-15T11:21:02.2686492Z 11:21:02 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1178 kbpsIn=1199
+2026-10-15T11:21:12.2921365Z 11:21:12 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1194 kbpsIn=1183
+2026-10-15T11:21:22.3017728Z 11:21:22 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1170 kbpsIn=1178
+2026-10-15T11:21:32.3192301Z 11:21:32 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1203 kbpsIn=1194
+2026-10-15T11:21:42.3298751Z 11:21:42 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1165 kbpsIn=1169
+2026-10-15T11:21:52.3411010Z 11:21:52 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1199 kbpsIn=1198
+2026-10-15T11:22:02.3557109Z 11:22:02 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1169 kbpsIn=1165
+2026-10-15T11:22:12.3715349Z 11:22:12 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1189 kbpsIn=1196
+2026-10-15T11:22:22.3874569Z 11:22:22 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1174 kbpsIn=1166
+2026-10-15T11:22:32.4007768Z 11:22:32 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1171 kbpsIn=1188
+2026-10-15T11:22:42.4224508Z 11:22:42 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1186 kbpsIn=1176
+2026-10-15T11:22:52.4334379Z 11:22:52 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1162 kbpsIn=1175
+2026-10-15T11:23:02.4499608Z 11:23:02 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1203 kbpsIn=1190
+2026-10-15T11:23:12.4654103Z 11:23:12 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1155 kbpsIn=1168
+2026-10-15T11:23:22.4790184Z 11:23:22 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1203 kbpsIn=1195
+2026-10-15T11:23:32.8067252Z 11:23:32 HEALTHY verified=8 connected=8 out=8 in=8 rendering=8 placeholders=0 kbpsOut=1162 kbpsIn=1163
+2026-10-15T12:06:43.0708420Z ##[error]The operation was canceled.
+2026-10-15T12:06:43.0778729Z ##[group]Run actions/upload-artifact@v4
+2026-10-15T12:06:43.0779043Z with:
+2026-10-15T12:06:43.0779302Z   name: p5
+2026-10-15T12:06:43.0779572Z   path: /tmp/run/out/p5
+2026-10-15T12:06:43.0779827Z   if-no-files-found: warn
+2026-10-15T12:06:43.0780120Z   compression-level: 6
+2026-10-15T12:06:43.0780398Z   overwrite: false
+2026-10-15T12:06:43.0780685Z   include-hidden-files: false
+2026-10-15T12:06:43.0780978Z ##[endgroup]
+2026-10-15T12:06:43.8694409Z (node:3027) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-15T12:06:43.8809682Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-15T12:06:43.8811354Z (node:3027) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-15T12:06:43.8816104Z With the provided path, there will be 2 files uploaded
+2026-10-15T12:06:43.8816973Z Artifact name is valid!
+2026-10-15T12:06:43.8817547Z Root directory input is valid!
+2026-10-15T12:06:43.8825967Z Beginning upload of artifact content to blob storage
+2026-10-15T12:06:43.8827073Z Uploaded bytes 20822
+2026-10-15T12:06:43.8827833Z Finished uploading artifact content to blob storage!
+2026-10-15T12:06:43.8828865Z SHA256 digest of uploaded artifact zip is 83e13b7747424dbd02eaf15e263ab0e60bb355817c5d5d53b83f27896f9054b4
+2026-10-15T12:06:43.8829499Z Finalizing artifact upload
+2026-10-15T12:06:44.0275090Z Artifact p5.zip successfully finalized. Artifact ID 11971141767
+2026-10-15T12:06:44.0276443Z Artifact p5 has been successfully uploaded! Final size is 20822 bytes. Artifact ID is 11971141767
+2026-10-15T12:06:44.0277877Z Artifact download URL: https://github.com/faithselby/holocene-room-test/actions/runs/38724962308/artifacts/11971141767
+2026-10-15T12:06:44.0425992Z Post job cleanup.
+2026-10-15T12:06:44.1363161Z [command]/usr/bin/git version
+2026-10-15T12:06:44.1433181Z git version 2.55.0
+2026-10-15T12:06:44.1485072Z Temporarily overriding HOME='/home/runner/work/_temp/a319ee9b-03bd-47eb-b3bf-ba3309c86982' before making global git config changes
+2026-10-15T12:06:44.1501006Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-15T12:06:44.1521512Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/holocene-room-test/holocene-room-test
+2026-10-15T12:06:44.1523408Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-15T12:06:44.1579859Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-15T12:06:44.1975124Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-15T12:06:44.2003187Z http.https://github.com/.extraheader
+2026-10-15T12:06:44.2047421Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-15T12:06:44.2104421Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-15T12:06:44.2197204Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-15T12:06:44.2233477Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-15T12:06:44.2800259Z Cleaning up orphan processes
+2026-10-15T12:06:44.2920109Z Terminate orphan process: pid (2176) (node)
+2026-10-15T12:06:44.2956243Z Terminate orphan process: pid (2188) (chrome)
+2026-10-15T12:06:44.2983240Z Terminate orphan process: pid (2190) (chrome_crashpad_handler)
+2026-10-15T12:06:44.3008016Z Terminate orphan process: pid (2192) (chrome_crashpad_handler)
+2026-10-15T12:06:44.3268735Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
