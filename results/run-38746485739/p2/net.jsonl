@@ -1,0 +1,10 @@
+{"at":"13:57:09.877","type":"info","text":"[holo-net] pc2 data ice=checking"}
+{"at":"13:57:09.878","type":"info","text":"[holo-net] pc2 data conn=connecting"}
+{"at":"13:57:09.933","type":"info","text":"[holo-net] pc2 data ice=connected"}
+{"at":"13:57:09.988","type":"info","text":"[holo-net] pc2 data conn=connected"}
+{"at":"13:57:10.168","type":"info","text":"[holo-net] pc7 video ice=checking"}
+{"at":"13:57:10.169","type":"info","text":"[holo-net] pc7 video conn=connecting"}
+{"at":"13:57:10.215","type":"info","text":"[holo-net] pc7 video ice=connected"}
+{"at":"13:57:10.261","type":"info","text":"[holo-net] pc7 video conn=connected"}
+{"at":"14:04:09.189","type":"log","text":"⚠️ Connection closed with: hol-a48a1cd4c85c5359093232ef"}
+{"at":"14:04:09.485","type":"warning","text":"⚠️ PeerJS disconnected from server"}

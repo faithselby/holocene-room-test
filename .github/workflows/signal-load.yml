@@ -1,0 +1,26 @@
+name: signal-load
+on:
+  workflow_dispatch:
+    inputs:
+      stages: { description: "cumulative fake rooms per stage", default: "10,30,60,120" }
+      stage_s: { description: "seconds per stage", default: "180" }
+      plateau_s: { description: "extra seconds at peak with churn (0 = none)", default: "0" }
+      churn: { description: "fraction of peers reconnecting per minute at peak", default: "0.1" }
+jobs:
+  load:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node signal-load.mjs
+        env:
+          STAGES: ${{ inputs.stages }}
+          STAGE_S: ${{ inputs.stage_s }}
+          PLATEAU_S: ${{ inputs.plateau_s }}
+          CHURN: ${{ inputs.churn }}
+          RUN: ${{ github.run_id }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: load, path: "load-*" }

@@ -1,0 +1,9 @@
+{"at":"14:25:49.833","type":"info","text":"[holo-net] pc2 data ice=checking"}
+{"at":"14:25:49.834","type":"info","text":"[holo-net] pc2 data conn=connecting"}
+{"at":"14:25:50.126","type":"info","text":"[holo-net] pc2 data ice=connected"}
+{"at":"14:25:50.178","type":"info","text":"[holo-net] pc2 data conn=connected"}
+{"at":"14:25:51.827","type":"info","text":"[holo-net] pc3 video ice=checking"}
+{"at":"14:25:51.829","type":"info","text":"[holo-net] pc3 video conn=connecting"}
+{"at":"14:25:52.009","type":"info","text":"[holo-net] pc3 video ice=connected"}
+{"at":"14:25:52.059","type":"info","text":"[holo-net] pc3 video conn=connected"}
+{"at":"14:32:39.373","type":"log","text":"⚠️ Connection closed with: hol-65a443e0a9ed0cf0c7eca74d"}

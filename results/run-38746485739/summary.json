@@ -1,0 +1,83 @@
+{
+  "plan": {
+    "R": 1,
+    "S": 2,
+    "start": 1792072622338,
+    "seats": [
+      {
+        "g": 1,
+        "room": 1,
+        "member": 1
+      },
+      {
+        "g": 2,
+        "room": 1,
+        "member": 2
+      }
+    ],
+    "hold": 300,
+    "converge": 120,
+    "scenario": "none"
+  },
+  "table": [
+    {
+      "room": 1,
+      "acct": "roomtest1",
+      "cores": 2,
+      "startedS": -0.6,
+      "joinS": 7.1,
+      "healthyS": 26.6,
+      "okPct": 100,
+      "in": 1,
+      "rend": 1,
+      "kbOut": 355,
+      "kbIn": 357,
+      "lossPct": 0,
+      "jitMs": 3,
+      "rttMs": 1,
+      "cpu": 1.3,
+      "memMB": 2059,
+      "restarts": 0,
+      "peers": 8,
+      "routes": "srflx/udp>srflx",
+      "film": "playing@2578s",
+      "chat": "ok",
+      "rejoinS": null,
+      "errs": 157,
+      "failedReq": 95,
+      "fatal": "",
+      "syncS": -0.3
+    },
+    {
+      "room": 1,
+      "acct": "roomtest2",
+      "cores": 2,
+      "startedS": 0,
+      "joinS": 6.7,
+      "healthyS": 26.9,
+      "okPct": 100,
+      "in": 1,
+      "rend": 1,
+      "kbOut": 357,
+      "kbIn": 356,
+      "lossPct": 0,
+      "jitMs": 2,
+      "rttMs": 1,
+      "cpu": 1.9,
+      "memMB": 2080,
+      "restarts": 0,
+      "peers": 8,
+      "routes": "srflx/udp>srflx",
+      "film": "playing@2578s",
+      "chat": "ok",
+      "rejoinS": null,
+      "errs": 200,
+      "failedReq": 97,
+      "fatal": "",
+      "syncS": 0
+    }
+  ],
+  "lines": [
+    "Room 1: converged 26.9s after start | healthy people per 10s: 002222222222222222222222222222222222222222"
+  ]
+}
