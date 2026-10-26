@@ -1,0 +1,158 @@
+{
+  "run": "38904764741",
+  "size": 9,
+  "stages": [
+    10,
+    30,
+    60,
+    120
+  ],
+  "stageS": 180,
+  "burstS": 30,
+  "plateauS": 300,
+  "churn": 0.1,
+  "summary": [
+    {
+      "stage": "10 rooms",
+      "peersLive": 90,
+      "opened": 90,
+      "openFail": {},
+      "openMs_p50_p95_max": [
+        257,
+        322,
+        477
+      ],
+      "pairs": 360,
+      "pairMs_p50_p95_max": [
+        373,
+        513,
+        632
+      ],
+      "pairTimeout": 0,
+      "expire": 0,
+      "probeMs_p50_p95_max": [
+        328,
+        347,
+        368
+      ],
+      "probeTimeout": 0,
+      "unplanned": 0,
+      "reconnOk": 0,
+      "reconnFail": 0
+    },
+    {
+      "stage": "30 rooms",
+      "peersLive": 270,
+      "opened": 180,
+      "openFail": {},
+      "openMs_p50_p95_max": [
+        256,
+        410,
+        843
+      ],
+      "pairs": 728,
+      "pairMs_p50_p95_max": [
+        385,
+        501,
+        653
+      ],
+      "pairTimeout": 0,
+      "expire": 0,
+      "probeMs_p50_p95_max": [
+        388,
+        524,
+        530
+      ],
+      "probeTimeout": 0,
+      "unplanned": 1,
+      "reconnOk": 1,
+      "reconnFail": 0
+    },
+    {
+      "stage": "60 rooms",
+      "peersLive": 539,
+      "opened": 270,
+      "openFail": {},
+      "openMs_p50_p95_max": [
+        235,
+        385,
+        914
+      ],
+      "pairs": 1136,
+      "pairMs_p50_p95_max": [
+        375,
+        881,
+        904
+      ],
+      "pairTimeout": 0,
+      "expire": 0,
+      "probeMs_p50_p95_max": [
+        418,
+        578,
+        646
+      ],
+      "probeTimeout": 1,
+      "unplanned": 8,
+      "reconnOk": 7,
+      "reconnFail": 1
+    },
+    {
+      "stage": "120 rooms",
+      "peersLive": 1079,
+      "opened": 540,
+      "openFail": {},
+      "openMs_p50_p95_max": [
+        226,
+        337,
+        728
+      ],
+      "pairs": 2168,
+      "pairMs_p50_p95_max": [
+        406,
+        623,
+        751
+      ],
+      "pairTimeout": 0,
+      "expire": 0,
+      "probeMs_p50_p95_max": [
+        547,
+        717,
+        873
+      ],
+      "probeTimeout": 0,
+      "unplanned": 1,
+      "reconnOk": 1,
+      "reconnFail": 0
+    },
+    {
+      "stage": "peak + churn",
+      "peersLive": 359,
+      "opened": 287,
+      "openFail": {
+        "open-timeout": 44
+      },
+      "openMs_p50_p95_max": [
+        434,
+        616,
+        1030
+      ],
+      "pairs": 1987,
+      "pairMs_p50_p95_max": [
+        2245,
+        2707,
+        5607
+      ],
+      "pairTimeout": 9785,
+      "expire": 2,
+      "probeMs_p50_p95_max": [
+        782,
+        2375,
+        2641
+      ],
+      "probeTimeout": 35,
+      "unplanned": 3836,
+      "reconnOk": 3160,
+      "reconnFail": 676
+    }
+  ]
+}

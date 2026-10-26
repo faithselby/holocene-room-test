@@ -1,0 +1,73 @@
+{"at":"15:37:53.096","type":"info","text":"[holo-net] pc6 data ice=checking"}
+{"at":"15:37:53.097","type":"info","text":"[holo-net] pc6 data conn=connecting"}
+{"at":"15:37:53.348","type":"info","text":"[holo-net] pc6 data ice=connected"}
+{"at":"15:37:53.349","type":"info","text":"[holo-net] pc6 data conn=connected"}
+{"at":"15:37:53.518","type":"info","text":"[holo-net] pc7 video ice=checking"}
+{"at":"15:37:53.520","type":"info","text":"[holo-net] pc7 video conn=connecting"}
+{"at":"15:37:53.650","type":"info","text":"[holo-net] pc7 video ice=connected"}
+{"at":"15:37:53.675","type":"info","text":"[holo-net] pc7 video conn=connected"}
+{"at":"15:37:54.174","type":"info","text":"[holo-net] pc3 data ice=checking"}
+{"at":"15:37:54.175","type":"info","text":"[holo-net] pc3 data conn=connecting"}
+{"at":"15:37:54.292","type":"info","text":"[holo-net] pc3 data ice=connected"}
+{"at":"15:37:54.317","type":"info","text":"[holo-net] pc3 data conn=connected"}
+{"at":"15:37:54.977","type":"info","text":"[holo-net] pc8 video ice=checking"}
+{"at":"15:37:54.979","type":"info","text":"[holo-net] pc8 video conn=connecting"}
+{"at":"15:37:55.056","type":"info","text":"[holo-net] pc8 video ice=connected"}
+{"at":"15:37:55.104","type":"info","text":"[holo-net] pc8 video conn=connected"}
+{"at":"15:37:55.593","type":"info","text":"[holo-net] pc9 data ice=checking"}
+{"at":"15:37:55.593","type":"info","text":"[holo-net] pc9 data conn=connecting"}
+{"at":"15:37:55.737","type":"info","text":"[holo-net] pc9 data ice=connected"}
+{"at":"15:37:55.815","type":"info","text":"[holo-net] pc9 data conn=connected"}
+{"at":"15:37:56.185","type":"info","text":"[holo-net] pc10 data ice=checking"}
+{"at":"15:37:56.186","type":"info","text":"[holo-net] pc10 data conn=connecting"}
+{"at":"15:37:56.330","type":"info","text":"[holo-net] pc11 video ice=checking"}
+{"at":"15:37:56.332","type":"info","text":"[holo-net] pc11 video conn=connecting"}
+{"at":"15:37:56.368","type":"info","text":"[holo-net] pc10 data ice=connected"}
+{"at":"15:37:56.417","type":"info","text":"[holo-net] pc10 data conn=connected"}
+{"at":"15:37:56.538","type":"info","text":"[holo-net] pc11 video ice=connected"}
+{"at":"15:37:56.561","type":"info","text":"[holo-net] pc11 video conn=connected"}
+{"at":"15:37:56.612","type":"info","text":"[holo-net] pc12 video ice=checking"}
+{"at":"15:37:56.614","type":"info","text":"[holo-net] pc12 video conn=connecting"}
+{"at":"15:37:56.741","type":"info","text":"[holo-net] pc12 video ice=connected"}
+{"at":"15:37:56.744","type":"info","text":"[holo-net] pc12 video conn=connected"}
+{"at":"15:37:59.807","type":"info","text":"[holo-net] pc13 data ice=checking"}
+{"at":"15:37:59.807","type":"info","text":"[holo-net] pc13 data conn=connecting"}
+{"at":"15:37:59.947","type":"info","text":"[holo-net] pc13 data ice=connected"}
+{"at":"15:38:00.013","type":"info","text":"[holo-net] pc13 data conn=connected"}
+{"at":"15:38:00.420","type":"info","text":"[holo-net] pc14 video ice=checking"}
+{"at":"15:38:00.421","type":"info","text":"[holo-net] pc14 video conn=connecting"}
+{"at":"15:38:00.564","type":"info","text":"[holo-net] pc14 video ice=connected"}
+{"at":"15:38:00.588","type":"info","text":"[holo-net] pc14 video conn=connected"}
+{"at":"15:38:09.340","type":"info","text":"[holo-net] pc17 data ice=checking"}
+{"at":"15:38:09.341","type":"info","text":"[holo-net] pc17 data conn=connecting"}
+{"at":"15:38:09.370","type":"info","text":"[holo-net] pc16 data ice=checking"}
+{"at":"15:38:09.370","type":"info","text":"[holo-net] pc16 data conn=connecting"}
+{"at":"15:38:09.398","type":"info","text":"[holo-net] pc17 data ice=connected"}
+{"at":"15:38:09.457","type":"info","text":"[holo-net] pc17 data conn=connected"}
+{"at":"15:38:09.479","type":"info","text":"[holo-net] pc16 data ice=connected"}
+{"at":"15:38:09.527","type":"info","text":"[holo-net] pc18 video ice=checking"}
+{"at":"15:38:09.527","type":"info","text":"[holo-net] pc18 video conn=connecting"}
+{"at":"15:38:09.592","type":"info","text":"[holo-net] pc18 video ice=connected"}
+{"at":"15:38:09.600","type":"info","text":"[holo-net] pc18 video conn=connected"}
+{"at":"15:38:09.626","type":"info","text":"[holo-net] pc16 data conn=connected"}
+{"at":"15:38:09.841","type":"info","text":"[holo-net] pc19 video ice=checking"}
+{"at":"15:38:09.843","type":"info","text":"[holo-net] pc19 video conn=connecting"}
+{"at":"15:38:09.949","type":"info","text":"[holo-net] pc19 video ice=connected"}
+{"at":"15:38:10.062","type":"info","text":"[holo-net] pc19 video conn=connected"}
+{"at":"15:38:25.442","type":"info","text":"[holo-net] pc20 data ice=checking"}
+{"at":"15:38:25.442","type":"info","text":"[holo-net] pc20 data conn=connecting"}
+{"at":"15:38:25.799","type":"info","text":"[holo-net] pc20 data ice=connected"}
+{"at":"15:38:25.858","type":"info","text":"[holo-net] pc20 data conn=connected"}
+{"at":"15:38:26.104","type":"info","text":"[holo-net] pc21 video ice=checking"}
+{"at":"15:38:26.105","type":"info","text":"[holo-net] pc21 video conn=connecting"}
+{"at":"15:38:26.207","type":"info","text":"[holo-net] pc21 video ice=connected"}
+{"at":"15:38:26.340","type":"info","text":"[holo-net] pc21 video conn=connected"}
+{"at":"15:49:58.105","type":"warning","text":"⚠️ PeerJS disconnected from server"}
+{"at":"15:49:58.105","type":"log","text":"🔄 Reconnection attempt 1/20"}
+{"at":"15:50:09.106","type":"warning","text":"⚠️ PeerJS disconnected from server"}
+{"at":"15:50:09.106","type":"log","text":"🔄 Reconnection attempt 2/20"}
+{"at":"15:54:46.371","type":"log","text":"⚠️ Connection closed with: hol-03459302bc8993faedb91bea"}
+{"at":"15:54:47.052","type":"log","text":"⚠️ Connection closed with: hol-4cb042ac02013773143017e9"}
+{"at":"15:54:49.972","type":"log","text":"⚠️ Connection closed with: hol-1c5932f351261cf381cbc48e"}
+{"at":"15:54:52.891","type":"log","text":"⚠️ Connection closed with: hol-d3fc1735f0e6e1ee186278e5"}
+{"at":"15:54:53.660","type":"log","text":"⚠️ Connection closed with: hol-92ec89b3274ca50a480f0ff6"}

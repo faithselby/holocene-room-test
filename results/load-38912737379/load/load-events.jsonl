@@ -1,0 +1,45 @@
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-6"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-2"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-4"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-8"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-0"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-5"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-7"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-3"}
+{"t":214.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-1"}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-3","ok":true,"ms":683}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-2","ok":true,"ms":705}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-5","ok":true,"ms":693}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-6","ok":true,"ms":712}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-8","ok":true,"ms":704}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-7","ok":true,"ms":705}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-1","ok":true,"ms":707}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-0","ok":true,"ms":715}
+{"t":218.3,"ev":"reconnect","id":"loadtest-38912737379-0-4","ok":true,"ms":727}
+{"t":323.4,"ev":"unplanned-close","id":"loadtest-38912737379-0-8"}
+{"t":323.4,"ev":"unplanned-close","id":"loadtest-38912737379-0-7"}
+{"t":323.4,"ev":"unplanned-close","id":"loadtest-38912737379-0-2"}
+{"t":323.4,"ev":"unplanned-close","id":"loadtest-38912737379-0-3"}
+{"t":326.7,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-2","msg":"ID is taken"}
+{"t":326.7,"ev":"reconnect","id":"loadtest-38912737379-0-2","ok":false,"why":"ID-TAKEN","ms":258}
+{"t":326.7,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-7","msg":"ID is taken"}
+{"t":326.7,"ev":"reconnect","id":"loadtest-38912737379-0-7","ok":false,"why":"ID-TAKEN","ms":280}
+{"t":326.7,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-3","msg":"ID is taken"}
+{"t":326.8,"ev":"reconnect","id":"loadtest-38912737379-0-3","ok":false,"why":"ID-TAKEN","ms":326}
+{"t":326.8,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-8","msg":"ID is taken"}
+{"t":326.8,"ev":"reconnect","id":"loadtest-38912737379-0-8","ok":false,"why":"ID-TAKEN","ms":431}
+{"t":328.4,"ev":"unplanned-close","id":"loadtest-38912737379-0-5"}
+{"t":328.4,"ev":"unplanned-close","id":"loadtest-38912737379-0-1"}
+{"t":332,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-5","msg":"ID is taken"}
+{"t":332,"ev":"reconnect","id":"loadtest-38912737379-0-5","ok":false,"why":"ID-TAKEN","ms":602}
+{"t":332,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-1","msg":"ID is taken"}
+{"t":332,"ev":"reconnect","id":"loadtest-38912737379-0-1","ok":false,"why":"ID-TAKEN","ms":607}
+{"t":333.4,"ev":"unplanned-close","id":"loadtest-38912737379-0-6"}
+{"t":336.7,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-6","msg":"ID is taken"}
+{"t":336.7,"ev":"reconnect","id":"loadtest-38912737379-0-6","ok":false,"why":"ID-TAKEN","ms":237}
+{"t":478.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-4"}
+{"t":481.8,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-4","msg":"ID is taken"}
+{"t":481.8,"ev":"reconnect","id":"loadtest-38912737379-0-4","ok":false,"why":"ID-TAKEN","ms":231}
+{"t":488.6,"ev":"unplanned-close","id":"loadtest-38912737379-0-0"}
+{"t":491.9,"ev":"ID-TAKEN","id":"loadtest-38912737379-0-0","msg":"ID is taken"}
+{"t":491.9,"ev":"reconnect","id":"loadtest-38912737379-0-0","ok":false,"why":"ID-TAKEN","ms":285}

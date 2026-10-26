@@ -1,0 +1,38 @@
+  private attemptReconnect() {
+    if (this.reconnectAttempts >= this.maxReconnectAttempts) {
+      console.error('❌ Max reconnection attempts reached')
+      this.emit('reconnect-failed')
+      return
+    }
+
+    this.reconnectAttempts++
+    console.log(`🔄 Reconnection attempt ${this.reconnectAttempts}/${this.maxReconnectAttempts}`)
+    this.emit('reconnecting', this.reconnectAttempts)
+
+    setTimeout(() => {
+      // Platform: never revive a shut-down instance; only reconnect if actually disconnected.
+      if (this.isDestroyed) return
+      if (this.peer && !this.peer.destroyed) {
+        if (this.peer.disconnected) {
+          try {
+            this.peer.reconnect()
+          } catch (err) {
+            console.error('Reconnect failed:', err)
+          }
+        }
+        // Platform: PeerJS counts as "connected" before the server confirms. If the server never
+        // confirms, nothing retries and the peer is silently unreachable. Force a fresh attempt.
+        const p = this.peer
+        setTimeout(() => {
+          if (!this.isDestroyed && this.peer === p && !p.destroyed && !p.disconnected && !p.open) {
+            console.warn('⏱️ PeerJS reconnect not confirmed after 10s - retrying')
+            p.disconnect() // emits 'disconnected' → next attempt
+          }
+        }, 10_000)
+      } else if (this.myPeerId) {
+        this.initialize(this.myPeerId).catch(err => {
+          console.error('Reconnection failed:', err)
+        })
+      }
+    }, Math.min(1000 * this.reconnectAttempts, 15_000))
+  }

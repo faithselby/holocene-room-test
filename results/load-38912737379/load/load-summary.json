@@ -1,0 +1,41 @@
+{
+  "run": "38912737379",
+  "size": 9,
+  "stages": [
+    1
+  ],
+  "stageS": 1200,
+  "burstS": 30,
+  "plateauS": 0,
+  "churn": 0.1,
+  "summary": [
+    {
+      "stage": "1 rooms",
+      "peersLive": 0,
+      "opened": 9,
+      "openFail": {},
+      "openMs_p50_p95_max": [
+        296,
+        659,
+        659
+      ],
+      "pairs": 72,
+      "pairMs_p50_p95_max": [
+        331,
+        434,
+        444
+      ],
+      "pairTimeout": 0,
+      "expire": 0,
+      "probeMs_p50_p95_max": [
+        310,
+        425,
+        425
+      ],
+      "probeTimeout": 0,
+      "unplanned": 18,
+      "reconnOk": 9,
+      "reconnFail": 9
+    }
+  ]
+}
